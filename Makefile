@@ -6,7 +6,7 @@
 #    By: frafal <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 20:59:46 by frafal            #+#    #+#              #
-#    Updated: 2022/10/03 21:20:18 by frafal           ###   ########.fr        #
+#    Updated: 2022/10/03 21:34:17 by frafal           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,18 +22,18 @@ RM	    := rm -f
 
 ${NAME}:	${OBJS}
 			@ echo "Compilation of $(NAME) ..."
-			ar rcs ${NAME} ${OBJS}
+			@ ar rcs ${NAME} ${OBJS}
 			@ echo "$(NAME) created"
 
 all:		${NAME}
 
 clean:
-			@ ${RM} *.o */*.o */*/*.o
-			@ echo "Deleting $(NAME) objs"
+			@ ${RM} *.o
+			@ echo "Deleting $(NAME) objects"
 
 fclean:		clean
 			@ ${RM} ${NAME}
-			@ echo "Deleting $(NAME) binary"
+			@ echo "Deleting $(NAME) library"
 
 re:			fclean all
 
