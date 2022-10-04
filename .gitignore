@@ -2,3 +2,5 @@ libft.so
 a.out
 savenorme
 *.swp
+*.o
+*.a
