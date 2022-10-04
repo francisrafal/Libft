@@ -6,7 +6,7 @@
 #    By: frafal <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 20:59:46 by frafal            #+#    #+#              #
-#    Updated: 2022/10/03 21:34:17 by frafal           ###   ########.fr        #
+#    Updated: 2022/10/04 10:44:52 by frafal           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,4 +37,8 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+so:
+	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+	gcc -nostartfiles -shared -o libft.so $(OBJS)
+
+.PHONY:		all clean fclean re so
