@@ -6,24 +6,26 @@
 #    By: frafal <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 20:59:46 by frafal            #+#    #+#              #
-#    Updated: 2022/10/04 10:44:52 by frafal           ###   ########.fr        #
+#    Updated: 2022/10/04 11:36:54 by frafal           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	:= libft.a
-CC		:= cc
-FLAGS	:= -Wall -Wextra -Werror
-SRCS	:= $(wildcard *.c)
-OBJS	:= ${SRCS:.c=.o}
-RM	    := rm -f
+NAME		:= libft.a
+CC			:= cc
+FLAGS		:= -Wall -Wextra -Werror
+SRCS		:= $(wildcard *.c)
+OBJS		:= ${SRCS:.c=.o}
+RM	    	:= rm -f
 
-%.o : %.c
-	${CC} ${FLAGS} -c $< -o $@
+%.o:		%.c
+			@ ${CC} ${FLAGS} -c $< -o $@
 
 ${NAME}:	${OBJS}
 			@ echo "Compilation of $(NAME) ..."
 			@ ar rcs ${NAME} ${OBJS}
 			@ echo "$(NAME) created"
+
+.PHONY:		all clean fclean re so
 
 all:		${NAME}
 
@@ -38,7 +40,5 @@ fclean:		clean
 re:			fclean all
 
 so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
-	gcc -nostartfiles -shared -o libft.so $(OBJS)
-
-.PHONY:		all clean fclean re so
+			$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRCS)
+			gcc -nostartfiles -shared -o libft.so $(OBJS)
