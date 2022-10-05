@@ -6,12 +6,11 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:07:30 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/04 17:21:54 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/05 15:04:34 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
