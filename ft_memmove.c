@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 10:16:06 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/04 17:59:42 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/05 10:14:44 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,28 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	tmp[n];
+	size_t	i;
+	char	*s;
+	char	*d;
 
-	//	tmp = malloc(sizeof(char) * n);
-	//if (tmp == NULL)
-	//	return (NULL);;
-	ft_memcpy(tmp, src, n);
-	ft_memcpy(dest, tmp, n);
-	//free(tmp);
+	s = (char *) src;
+	d = (char *) dest;
+	i = 0;
+	if ((d - s) > 0)
+	{
+		while (n > 0)
+		{
+			d[n - 1] = s[n - 1];
+			n--;
+		}
+	}
+	if ((d - s) < 0)
+	{
+		while (i < n)
+		{
+			d[i] = s[i];
+			i++;
+		}
+	}
 	return (dest);
-	// https://www.geeksforgeeks.org/write-memcpy/
 }
