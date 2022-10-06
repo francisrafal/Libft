@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:07:30 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/05 15:04:34 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/06 18:27:12 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	if ((dest == NULL) || (src == NULL))
-		return (NULL);
 	char	*d;
 	char	*s;
 
+	if ((dest == NULL) || (src == NULL))
+		return (NULL);
 	d = (char *) dest;
 	s = (char *) src;
 	while (n > 0)

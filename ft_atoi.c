@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:14:08 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/06 16:29:07 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/06 18:26:04 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_atoi(const char *nptr)
 {
-	long long 			i;
+	long long			i;
 	int					sign;
 	int					digits;
-	unsigned long long 	nb;
+	unsigned long long	nb;
 
 	i = 0;
 	sign = 1;
