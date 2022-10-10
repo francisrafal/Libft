@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:14:08 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/06 18:35:55 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/10 10:32:04 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,16 +38,24 @@ int	ft_atoi(const char *nptr)
 		i++;
 		digits++;
 	}
-	if (sign == 1 && digits >= 19 && (ft_strncmp(nptr[i - digits + 18] > '7'))
-		return (-1);
-	if (sign == -1 && digits >= 19 && (nptr[i - digits + 18] > '8'))
-		return (0);
+	if (sign == 1)
+	{
+		if (digits > 19)
+			return (-1);
+		if (digits == 19 && (ft_strncmp(&nptr[i - 19], LLONG_MAX_ABS, 19) > 0))
+			return (-1);
+	}
+	if (sign == -1)
+	{
+		if (digits > 19)
+			return (0);
+		if (digits == 19 && (ft_strncmp(&nptr[i - 19], LLONG_MIN_ABS, 19) > 0))
+			return (0);
+	}
 	return (nb * sign);
 }
 
-// Sonderfall 1: Wenn es exakt 19 Digits sind, dann strncmp fuer positive und negative Zahlen
-// Sonderfall 2: Wenn es mehr als 19 Digits sind, dann auf jeden Fall entweder -1 oder 0 returnen
-
+/*
 #include <stdio.h>
 #include <stdlib.h>
 int	main(int ac, char **av)
@@ -67,4 +75,5 @@ int	main(int ac, char **av)
 	}
 	return (0);
 }
+*/
 
