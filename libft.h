@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:42:28 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/10 10:19:26 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/10 14:30:37 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define QUOTES(string) #string
 # define LLONG_MIN_ABS QUOTES(9223372036854775808)
 # define LLONG_MAX_ABS QUOTES(9223372036854775807)
+# define INT_MAX 2147483647
 
 /* Libc functions */
 
