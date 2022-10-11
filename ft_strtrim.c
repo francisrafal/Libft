@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:28:52 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/11 13:06:04 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/11 13:09:07 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1 == NULL || set == NULL)
 		return (NULL);
 	i = 0;
-	len = ft_strlen(s1);	
+	len = ft_strlen(s1);
 	while (s1[i])
 	{
 		j = 0;
