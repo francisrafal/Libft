@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:22:40 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/11 15:02:58 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/11 15:15:16 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ char	*ft_itoa(int n)
 	digits = 1;
 	sign = 0;
 	if (n < 0)
-	{
 		sign = 1;
-	}
 	while (num / 10 != 0)
 	{
 		digits++;
@@ -39,9 +37,7 @@ char	*ft_itoa(int n)
 		return (a);
 	}
 	if (n < 0)
-	{
 		n = -n;
-	}
 	if (a == NULL)
 		return (NULL);
 	i = 0;

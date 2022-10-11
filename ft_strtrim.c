@@ -6,11 +6,25 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:28:52 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/11 13:09:07 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/11 15:34:41 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static int	in_set(char c, char const *set)
+{
+	size_t	j;
+
+	j = 0;
+	while (set[j])
+	{
+		if (c == set[j])
+			return (1);
+		j++;
+	}
+	return (0);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -22,49 +36,19 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (s1 == NULL || set == NULL)
 		return (NULL);
 	i = 0;
+	while (s1[i] && in_set(s1[i], set))
+		i++;
 	len = ft_strlen(s1);
-	while (s1[i])
-	{
-		j = 0;
-		while (set[j])
-		{
-			if (s1[i] == set[j])
-			{
-				i++;
-				break ;
-			}
-			j++;
-		}
-		if (set[j] == '\0')
-			break ;
-	}
 	if (i == len)
 		return ((char *)s1 + i);
-	while (len > 0)
-	{
-		j = 0;
-		while (set[j])
-		{
-			if (s1[len - 1] == set[j])
-			{
-				len--;
-				break ;
-			}
-			j++;
-		}
-		if (set[j] == '\0')
-			break ;
-	}
+	while (len > 0 && in_set(s1[len - 1], set))
+		len--;
 	trim = (char *)malloc((len - i + 1) * sizeof(char));
 	if (trim == NULL)
 		return (NULL);
 	j = 0;
 	while (i < len)
-	{
-		trim[j] = s1[i];
-		j++;
-		i++;
-	}
+		trim[j++] = s1[i++];
 	trim[j] = '\0';
 	return (trim);
 }

@@ -6,38 +6,14 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:14:08 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/10 10:50:25 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/11 15:59:47 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+static int	over_llong(long long i, int sign, int digits, const char *nptr)
 {
-	long long			i;
-	int					sign;
-	int					digits;
-	unsigned long long	nb;
-
-	i = 0;
-	sign = 1;
-	nb = 0;
-	digits = 0;
-	while (nptr[i] == 32 || (nptr[i] >= 9 && nptr[i] <= 13))
-		i++;
-	if (nptr[i] == '-')
-	{
-		sign = -1;
-		i++;
-	}
-	if (nptr[i] == '+')
-		i++;
-	while (nptr[i] != '\0' && ft_isdigit(nptr[i]))
-	{
-		nb = nb * 10 + (nptr[i] - 48);
-		i++;
-		digits++;
-	}
 	if (sign == 1)
 	{
 		if (digits > 19)
@@ -52,6 +28,42 @@ int	ft_atoi(const char *nptr)
 		if (digits == 19 && (ft_strncmp(&nptr[i - 19], LLONG_MIN_ABS, 19) > 0))
 			return (0);
 	}
+	return (1);
+}
+
+static void	trim_space_and_sign(long long *i, int *sign, const char *nptr)
+{
+	while (nptr[*i] == 32 || (nptr[*i] >= 9 && nptr[*i] <= 13))
+		(*i)++;
+	if (nptr[*i] == '-')
+	{
+		*sign = -1;
+		(*i)++;
+	}
+	if (nptr[*i] == '+')
+		(*i)++;
+}
+
+int	ft_atoi(const char *nptr)
+{
+	long long			i;
+	int					sign;
+	int					digits;
+	unsigned long long	nb;
+
+	i = 0;
+	sign = 1;
+	nb = 0;
+	digits = 0;
+	trim_space_and_sign(&i, &sign, nptr);
+	while (nptr[i] != '\0' && ft_isdigit(nptr[i]))
+	{
+		nb = nb * 10 + (nptr[i++] - 48);
+		digits++;
+	}
+	digits = over_llong(i, sign, digits, nptr);
+	if (digits <= 0)
+		return (digits);
 	return (nb * sign);
 }
 
