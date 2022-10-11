@@ -6,13 +6,12 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 13:09:43 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/11 14:21:37 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/11 15:13:40 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-#include <stdio.h>
 char	**ft_split(char const *s, char c)
 {
 	size_t	arr_size;
@@ -31,13 +30,13 @@ char	**ft_split(char const *s, char c)
 			i++;
 		else
 		{
-			arr_size++;		
+			arr_size++;
 			while (s[i] && s[i] != c)
 				i++;
 		}
 	}
 	arr_size++;
-	arr = (char **)malloc(arr_size * sizeof(char *));	
+	arr = (char **)malloc(arr_size * sizeof(char *));
 	if (arr == NULL)
 		return (NULL);
 	arr_size = 0;

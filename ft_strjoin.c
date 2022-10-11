@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:06:22 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/11 11:25:30 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/11 15:05:14 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 	}
 	i = 0;
-	while (s2[i])	
+	while (s2[i])
 	{
 		new_str[s1_len + i] = s2[i];
 		i++;
 	}
-	new_str[s1_len + i] = '\0';		
+	new_str[s1_len + i] = '\0';
 	return (new_str);
 }

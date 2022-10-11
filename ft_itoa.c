@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:22:40 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/11 14:51:06 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/11 15:02:58 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_itoa(int n)
 	if (n == INT_MIN)
 	{
 		ft_memmove(a, "-2147483648", 12);
-		return (a);	
+		return (a);
 	}
 	if (n < 0)
 	{
@@ -50,12 +50,12 @@ char	*ft_itoa(int n)
 		a[i] = '-';
 		i++;
 	}
-	a[sign + digits] = '\0'; 
+	a[sign + digits] = '\0';
 	while (digits > 0)
 	{
-		a[sign + digits - 1] = n % 10 + '0';	
+		a[sign + digits - 1] = n % 10 + '0';
 		digits--;
 		n /= 10;
 	}
-	return (a);	
+	return (a);
 }

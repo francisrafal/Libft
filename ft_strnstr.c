@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 13:09:51 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/10 14:08:49 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/11 15:06:06 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	if (big == NULL || little == NULL)
 		return (NULL);
 	if (little[0] == 0)
-		return ((char *)big);	
+		return ((char *)big);
 	little_len = ft_strlen(little);
 	i = 0;
 	while (big[i] != '\0' && i < len - little_len + 1)
@@ -37,7 +37,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 			}
 			if (j == little_len)
 				return ((char *)big + i);
-		} 
+		}
 		i++;
 	}
 	return (NULL);
