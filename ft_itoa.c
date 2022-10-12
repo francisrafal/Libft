@@ -6,11 +6,26 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:22:40 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/11 15:15:16 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/12 10:03:13 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	fill_str(int n, int *sign, int *digits, char *a)
+{
+	if (n < 0)
+		n = -n;
+	if (*sign == 1)
+		a[0] = '-';
+	a[*sign + *digits] = '\0';
+	while (*digits > 0)
+	{
+		a[*sign + *digits - 1] = n % 10 + '0';
+		(*digits)--;
+		n /= 10;
+	}
+}
 
 char	*ft_itoa(int n)
 {
@@ -18,7 +33,6 @@ char	*ft_itoa(int n)
 	int		digits;
 	int		sign;
 	int		num;
-	int		i;
 
 	num = n;
 	digits = 1;
@@ -31,27 +45,13 @@ char	*ft_itoa(int n)
 		num /= 10;
 	}
 	a = (char *)malloc((sign + digits + 1) * sizeof(char));
+	if (a == NULL)
+		return (NULL);
 	if (n == INT_MIN)
 	{
 		ft_memmove(a, "-2147483648", 12);
 		return (a);
 	}
-	if (n < 0)
-		n = -n;
-	if (a == NULL)
-		return (NULL);
-	i = 0;
-	if (sign == 1)
-	{
-		a[i] = '-';
-		i++;
-	}
-	a[sign + digits] = '\0';
-	while (digits > 0)
-	{
-		a[sign + digits - 1] = n % 10 + '0';
-		digits--;
-		n /= 10;
-	}
+	fill_str(n, &sign, &digits, a);
 	return (a);
 }

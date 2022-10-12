@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:42:28 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/11 15:06:43 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/12 10:18:42 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-# define QUOTES(string) #string
-# define LLONG_MIN_ABS QUOTES(9223372036854775808)
-# define LLONG_MAX_ABS QUOTES(9223372036854775807)
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
 

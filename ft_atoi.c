@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:14:08 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/11 15:59:47 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/12 10:18:16 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,23 @@
 
 static int	over_llong(long long i, int sign, int digits, const char *nptr)
 {
+	char	*llong_max_abs;
+	char	*llong_min_abs;
+
+	llong_max_abs = "9223372036854775807";
+	llong_min_abs = "9223372036854775808";
 	if (sign == 1)
 	{
 		if (digits > 19)
 			return (-1);
-		if (digits == 19 && (ft_strncmp(&nptr[i - 19], LLONG_MAX_ABS, 19) > 0))
+		if (digits == 19 && (ft_strncmp(&nptr[i - 19], llong_max_abs, 19) > 0))
 			return (-1);
 	}
 	if (sign == -1)
 	{
 		if (digits > 19)
 			return (0);
-		if (digits == 19 && (ft_strncmp(&nptr[i - 19], LLONG_MIN_ABS, 19) > 0))
+		if (digits == 19 && (ft_strncmp(&nptr[i - 19], llong_min_abs, 19) > 0))
 			return (0);
 	}
 	return (1);
@@ -66,7 +71,6 @@ int	ft_atoi(const char *nptr)
 		return (digits);
 	return (nb * sign);
 }
-
 /*
 #include <stdio.h>
 #include <stdlib.h>
