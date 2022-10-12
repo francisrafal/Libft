@@ -5,3 +5,4 @@ savenorme
 *.o
 *.a
 libft.h.gch
+libftTester
