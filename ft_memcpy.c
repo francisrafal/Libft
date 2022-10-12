@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 17:07:30 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/06 18:27:12 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/12 17:03:20 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*d;
 	char	*s;
 
-	if ((dest == NULL) || (src == NULL))
+	if (!dest && !src)
 		return (NULL);
 	d = (char *) dest;
 	s = (char *) src;
@@ -28,3 +28,22 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	}
 	return (dest);
 }
+/*
+
+#include <string.h>
+#include <stdio.h>
+int	main(void)
+{
+	char *src = NULL;
+	char dest[100];
+	char dest2[100];
+	//char *dest = NULL;
+	//char *dest2 = NULL;
+	size_t	n = 0;
+	char	*res = ft_memcpy(dest2, src, n);
+	char	*res2 = memcpy(dest, src, n);
+	printf("ft: address: %p, string: \"%s\"\n", res, res);
+	printf("original: address: %p, string: \"%s\"\n", res2, res2);
+	return (0);
+}
+*/

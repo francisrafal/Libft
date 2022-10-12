@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:28:52 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/11 15:34:41 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/12 17:08:53 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[i] && in_set(s1[i], set))
 		i++;
 	len = ft_strlen(s1);
-	if (i == len)
+	if (i == len && !i)
 		return ((char *)s1 + i);
 	while (len > 0 && in_set(s1[len - 1], set))
 		len--;
