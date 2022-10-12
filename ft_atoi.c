@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 15:14:08 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/12 10:18:16 by frafal           ###   ########.fr       */
+/*   Updated: 2022/10/12 11:33:50 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static void	trim_space_and_sign(long long *i, int *sign, const char *nptr)
 		*sign = -1;
 		(*i)++;
 	}
-	if (nptr[*i] == '+')
+	if (nptr[*i] == '+' && *sign != -1)
 		(*i)++;
 }
 
