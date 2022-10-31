@@ -67,11 +67,9 @@ char	**ft_split(char const *s, char c)
 {
 	size_t	arr_size;
 	char	**arr;	
-	size_t	i;
 
 	if (s == NULL)
 		return (NULL);
-	i = 0;
 	arr_size = calc_arr_size(s, c);
 	arr = (char **)malloc(arr_size * sizeof(char *));
 	if (arr == NULL)
