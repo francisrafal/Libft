@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:42:28 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/31 16:21:48 by frafal           ###   ########.fr       */
+/*   Updated: 2022/11/11 10:46:33 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-# define INT_MAX 2147483647
-# define INT_MIN -2147483648
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 2048
 # endif

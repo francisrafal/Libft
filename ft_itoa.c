@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 14:22:40 by frafal            #+#    #+#             */
-/*   Updated: 2022/10/12 10:03:13 by frafal           ###   ########.fr       */
+/*   Updated: 2022/11/11 10:45:37 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ char	*ft_itoa(int n)
 	a = (char *)malloc((sign + digits + 1) * sizeof(char));
 	if (a == NULL)
 		return (NULL);
-	if (n == INT_MIN)
+	if (n == -2147483648)
 	{
 		ft_memmove(a, "-2147483648", 12);
 		return (a);
