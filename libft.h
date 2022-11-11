@@ -6,7 +6,7 @@
 /*   By: frafal <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:42:28 by frafal            #+#    #+#             */
-/*   Updated: 2022/11/11 10:46:33 by frafal           ###   ########.fr       */
+/*   Updated: 2022/11/11 10:59:12 by frafal           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 2048
 # endif
@@ -61,5 +62,15 @@ void	ft_putnbr_fd(int n, int fd);
 /* get_next_line */
 
 char	*get_next_line(int fd);
+
+/* ft_printf */
+
+int		ft_printf(const char *format, ...);
+int		print_hex(unsigned long long n, const char specifier);
+int		print_str(char *str);
+int		print_char(char c);
+int		print_nbr(int n);
+int		print_unsigned(unsigned int n);
+char	*u_itoa(unsigned int n);
 
 #endif

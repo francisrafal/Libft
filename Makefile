@@ -6,7 +6,7 @@
 #    By: frafal <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/03 20:59:46 by frafal            #+#    #+#              #
-#    Updated: 2022/11/11 10:51:34 by frafal           ###   ########.fr        #
+#    Updated: 2022/11/11 10:55:51 by frafal           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,10 @@ SRCS		:= ft_atoi.c \
 				ft_substr.c \
 				ft_tolower.c \
 				ft_toupper.c \
-				get_next_line.c 
+				get_next_line.c \
+				ft_printf.c \
+				ft_printf_hex.c \
+				ft_printf_utils.c
 OBJS		:= ${SRCS:.c=.o}
 RM	    	:= rm -f
 
